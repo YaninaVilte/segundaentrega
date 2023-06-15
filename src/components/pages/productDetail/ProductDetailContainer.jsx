@@ -1,2 +1,0 @@
-
-// pasa todo a ItemDetailContainer
