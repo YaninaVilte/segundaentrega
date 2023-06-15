@@ -1,0 +1,38 @@
+.containerNavbar {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(204, 212, 219);
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: 4rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+li {
+    list-style: none;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.categories a {
+    padding: 10px 20px;
+    color: #0084ff;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.footer {
+  background: #0084ff;
+  padding: 2rem, black;
+  margin-top: 3rem;
+  height: 5rem;
+}
+
+.footer h1,
+.footer p {
+  color: rgb(204, 212, 219);
+  text-align: center;
+}
+
+.carrito {
+  background: white;
+}
