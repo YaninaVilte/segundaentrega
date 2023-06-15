@@ -1,5 +1,4 @@
 import Layout from "./components/layout/Layout";
-
 import CartContainer from "./components/pages/cart/CartContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";

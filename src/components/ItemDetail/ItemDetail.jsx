@@ -1,48 +1,30 @@
-import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import { ItemCount } from "../../components/ItemCount/ItemCount";
+import styles from "../ItemDetail/ItemDetail.css";
 
-const ItemDetail = ({ elemento }) => {
+const ItemDetail = ({ productSelected }) => {
+
+    const onAdd = (cantidad) => {
+
+        let data = {
+            ...productSelected,
+            quantity: cantidad,
+        };
+
+        console.log(data);
+    };
+
     return (
-        <Card sx={{ width: 400, height: 500, backgroundColor: "white" }}>
-            <CardMedia
-                sx={{ height: 300 }}
-                image={elemento.img}
-            />
-            <CardContent sx={{ height: 150 }}>
-                <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    textAlign={"center"}
-                >
-                    {elemento.title}
-                </Typography>
-                <Typography variant="h6" color="text.secondary" textAlign={"center"}>
-                    {elemento.description}
-                </Typography>
-                <Typography variant="subtitle1" textAlign={"center"}>
-                    ${elemento.price}.-
-                </Typography>
-            </CardContent>
-            <CardActions style={{ display: "flex", justifyContent: "center" }}>
-                <Link to={`/itemDetail/${elemento.id}`}>
-                    <Button
-                        variant="contained"
-                        size="small"
-                        sx={{ textTransform: "none" }}
-                    >
-                        Ver detalle
-                    </Button>
-                </Link>
-            </CardActions>
-        </Card>
+        <>
+            <div className="productDetail">
+                <h2>{productSelected.title}</h2>
+                <img className="imgDetail" src={productSelected.img} alt="" />
+            </div>
+            {productSelected.stock > 0 ? (
+                <ItemCount stock={productSelected.stock} initial={1} onAdd={onAdd} />
+            ) : (
+                <h3>No hay stock</h3>
+            )}
+        </>
     );
 };
 

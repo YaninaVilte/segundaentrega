@@ -1,5 +1,11 @@
-.numeroContador {
-    font-size: 2rem;
-    padding: 1rem;
-    color: white;
+.productDetail .imgDetail {
+    width: 100px;
 }
+
+.productDetail {
+    background: lightblue;
+    width: 20%;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;

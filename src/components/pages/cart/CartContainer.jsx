@@ -1,9 +1,9 @@
-import { useEffect } from "react"
 import {
     Button,
 } from "@mui/material";
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import styles from "../cart/CartContainer.css";
 
 const CartContainer = () => {
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductDetail from "../pages/productDetail/ProductDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { products } from "../../../src/asyncMock";
 import { useParams } from "react-router-dom";
 
@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
     }, [id]);
 
 
-    return <ProductDetail productSelected={productSelected} />;
+    return <ItemDetail productSelected={productSelected} />;
 };
 
 export default ItemDetailContainer;
