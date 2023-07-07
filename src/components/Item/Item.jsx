@@ -7,10 +7,11 @@ import {
     Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import styles from "../Item/Item.css"
 
 const Item = ({ elemento }) => {
     return (
-        <Card sx={{ width: 400, height: 500, backgroundColor: "white" }}>
+        <Card class="cardBebidas">
             <CardMedia
                 sx={{ height: 300 }}
                 image={elemento.img}

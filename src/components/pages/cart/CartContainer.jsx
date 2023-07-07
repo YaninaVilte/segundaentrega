@@ -1,26 +1,27 @@
-import {
-    Button,
-} from "@mui/material";
-
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import styles from "../cart/CartContainer.css";
+import { CartContext } from "../../context/CartContext";
 
 const CartContainer = () => {
 
-    const navigate = useNavigate()
-
-    const realizarCompra = () => {
-        console.log("se compraron los productos")
-        // navegar
-        navigate("/")
-    }
+    const { cart, clearCart, removeById } = useContext(CartContext);
 
     return (
         <div className="carrito">
             <h1>Carrito</h1>
-            <Button onClick={realizarCompra}>Comprar</Button>
+            <button onClick={clearCart}>Limpiar carrito</button>
+            {cart.map((product) => {
+                return (
+                    <div key={product.id}>
+                        <h2>{product.title}</h2>
+                        <h3>{product.price}</h3>
+                        <h3>{product.quantity}</h3>
+                        <button onClick={() => removeById(product.id)}>Eliminar</button>
+                    </div>
+                );
+            })}
         </div>
     )
 }
 
-export default CartContainer
+export default CartContainer;
