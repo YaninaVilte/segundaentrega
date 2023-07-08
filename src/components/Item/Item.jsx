@@ -11,7 +11,7 @@ import styles from "../Item/Item.css"
 
 const Item = ({ elemento }) => {
     return (
-        <Card class="cardBebidas">
+        <Card className="cardBebidas">
             <CardMedia
                 sx={{ height: 300 }}
                 image={elemento.img}

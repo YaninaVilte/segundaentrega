@@ -6,6 +6,6 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    background-color: black;
+    background-color: rgb(199, 138, 138);
     min-height: 100vh;
 }

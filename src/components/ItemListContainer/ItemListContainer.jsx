@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { products } from "../../asyncMock";
 import { useParams } from "react-router";
 import { ScaleLoader } from "react-spinners";
+import { database } from "../../services/firebase/firebaseConfig.js";
+import {collection, getDocs, query, where } from "firebase/firestore";
+import AgregarDocs from "../../AgregarDocs";
+
 
 const objetoLoader = {
     display: "block",
@@ -13,35 +16,51 @@ const objetoLoader = {
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-
     const { categoryName } = useParams();
 
     useEffect(() => {
 
-        let productosFiltrados = products.filter(
-            (product) => product.category === categoryName
-        );
+        let itemCollection = collection(database, "products");
+        let consulta;
 
-        const tarea = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(categoryName ? productosFiltrados : products);
-            }, 500);
-        });
+        if (categoryName) {
+            // los filtrados
+            consulta = query(itemCollection, where("category", "==", categoryName))
+        } else {
+            // todos
+            consulta = itemCollection
+        }
 
-        tarea
-            .then((respuesta) => setItems(respuesta))
-            .catch((rechazo) => {
-                console.log(rechazo);
-            });
+        getDocs(consulta)
+            .then((res) => {
+                let products = res.docs.map((elemento) => {
+                    return {
+                        ...elemento.data(),
+                        id: elemento.id,
+                    };
+                });
+                setItems(products);
+            })
+            .catch((err) => console.log(err));
+
     }, [categoryName]);
 
     if (items.length === 0) {
         return (
-            <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                <ScaleLoader cssOverride={objetoLoader} color="#36d7b7" />
+            <div
+                style={{
+                    width: "100%",
+                    height: "90vh",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <ScaleLoader color="steelblue" width={40} height={111} />
             </div>
         );
     }
+
 
     return (
         <div>
