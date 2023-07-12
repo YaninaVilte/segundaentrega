@@ -2,31 +2,31 @@ export const menuNavigate = [
     {
         id: "home",
         path: "/",
-        title: "Limpiar filtros"
+        title: "Todos"
     },
     {
         id: "vinos",
         path: "/category/vinos",
-        title: "vinos"
+        title: "Vino"
     },
     {
         id: "whisky",
         path: "/category/whisky",
-        title: "whisky"
+        title: "Whisky"
     },
     {
         id: "cerveza",
         path: "/category/cerveza",
-        title: "cerveza"
+        title: "Cerveza"
     },
     {
         id: "vodka",
         path: "/category/vodka",
-        title: "vodka"
+        title: "Vodka"
     },
     {
         id: "gin",
         path: "/category/gin",
-        title: "gin"
+        title: "Gin"
     },
 ] 

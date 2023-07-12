@@ -1,11 +1,47 @@
-.productDetail .imgDetail {
-    width: 100px;
+.productSelectedContainer {
+    display: flex;
+    margin: 3rem;
 }
 
-.productDetail {
-    background: lightblue;
-    width: 20%;
-    margin: 2rem;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+
+
+.imgProductSelectedContainer {
+  margin-left: 5rem;
+}
+
+.imgProductSelected {
+  width: 20rem;
+}
+
+.detailProductSelected {
+  margin-left: 5rem;
+}
+
+.productSelectedContainer {
+  display: flex;
+  margin: 3rem;
+}
+
+.datasheetProductSelected {
+  margin: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.description {
+  white-space: pre-line;
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+}
+
+.titleDatasheet {
+  text-align: center;
+}
+
+.datasheetProductSelected h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

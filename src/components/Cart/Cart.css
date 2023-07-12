@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .cart-container {
     width: 100%;
     padding: 50px 0;
@@ -15,7 +17,7 @@
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    border-right: 2px solid #7F669D;
+    border-right: 3px solid #146C94;
     padding: 0 40px;
 }
 
@@ -24,7 +26,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    color: #7F669D;
 }
 
 .btn-cart {
@@ -42,18 +43,16 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    height: 100px;
+    height: 95px;
     align-items: center;
-    /* border: 1px solid #7F669D; */
-    box-shadow: 0px 2px 5px 0px #7F669D;
-    border-radius: 10px;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
     padding: 0 10px;
-
+    background-color: #F6F6F6;
 }
 
 .cart-item>img {
-    width: 10%;
-    height: 80px;
+    width: 7%;
     object-fit: cover;
 }
 
@@ -64,11 +63,52 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #7F669D;
-
-
 }
 
 .cart-item-info>h2 {
-    font-family: monospace;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 12px;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+    min-height: 0.5em;
+    min-width: 0;
+    outline: none;
+    padding: 0.3em 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    margin-top: 0.5rem;
+}
+
+.vaciarCarrito:hover {
+    color: #fff;
+    background-color: #e80707;
+    box-shadow: rgba(216, 14, 14, 0.25) 0 8px 15px;
+    border: 1px solid #e80707;
+    transform: translateY(-2px);
+}
+
+.continuarCompra:hover {
+    color: #fff;
+    background-color: #21be34;
+    box-shadow: rgba(51, 216, 14, 0.25) 0 8px 15px;
+    border: 1px solid #21be34;
+    transform: translateY(-2px);
 }

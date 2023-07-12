@@ -1,5 +1,5 @@
 import Item from "../../components/Item/Item";
-import styles from "../ItemList/ItemList.css"
+import "../ItemList/ItemList.css"
 
 const ItemList = ({ items }) => {
     // [{}, {}, {}]

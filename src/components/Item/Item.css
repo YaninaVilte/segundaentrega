@@ -1,11 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .cardBebidas {
     width: 15rem;
-    padding: .5rem .5rem;
-    margin: 1rem;
-    margin-top: 3rem;
-    background-color: #F6F6F6;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-    box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.69);
+	padding: .5rem .5rem;
+	margin: 1rem;
+	margin-top: 3rem;
+	background-color: #F6F6F6;
+	display: flex;
+	flex-direction: column;
+	font-size: 0.9rem;
+	box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.69);
+}
+
+.cardBebidas img {
+    width: 100%;
+    margin-bottom: 0.7rem;
+}
+
+button {
+	appearance: none;
+	background-color: transparent;
+	border: 0.125em solid #1A1A1A;
+	border-radius: 0.9375em;
+	box-sizing: border-box;
+	color: #3B3B3B;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 12px;
+	font-weight: 300;
+	line-height: normal;
+	margin: 0;
+	min-height: 0.5em;
+	min-width: 0;
+	outline: none;
+	padding: 0.3em 1em;
+	text-align: center;
+	text-decoration: none;
+	transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	will-change: transform;
+	margin-top: 0.5rem;
+}
+
+button:hover {
+	color: #fff;
+	background-color: #1A1A1A;
+	box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+	transform: translateY(-2px);
+}
+
+.title {
+	color: #146C94;
+	font-size: 1rem;
+	margin-left: 1rem;
+	margin-bottom: 0.1em;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.price {
+	font-size: 1.1rem;
+	margin-left: 1rem;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.category {
+	font-size: 0.8rem;
+	margin-left: 1rem;
+	font-family: 'Quicksand', sans-serif;
+	text-transform: uppercase;
 }

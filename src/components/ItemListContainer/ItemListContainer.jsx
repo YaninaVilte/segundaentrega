@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router";
-import { ScaleLoader } from "react-spinners";
+import { PuffLoader} from "react-spinners";
 import { database } from "../../services/firebase/firebaseConfig.js";
 import {collection, getDocs, query, where } from "firebase/firestore";
 import AgregarDocs from "../../AgregarDocs";
@@ -56,7 +56,11 @@ const ItemListContainer = () => {
                     alignItems: "center",
                 }}
             >
-                <ScaleLoader color="steelblue" width={40} height={111} />
+                <PuffLoader
+                    color="#146C94"
+                    cssOverride={{}}
+                    size={100}
+                />
             </div>
         );
     }
@@ -64,7 +68,7 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            <ItemList items={items} />;
+            <ItemList items={items} />
         </div>
     );
 };

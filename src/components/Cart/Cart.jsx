@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Cart.css";
 const Cart = ({ cart, limpiar, removeById, total }) => {
@@ -11,13 +10,13 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                             <div key={item.id} className="cart-item">
                                 <img src={item.img} alt="" />
                                 <div className="cart-item-info">
-                                    <h2>{item.name}</h2>
+                                    <h2>{item.title}</h2>
                                     <h2>${item.price}.-</h2>
                                     <h2>Unidades: {item.quantity}</h2>
                                 </div>
-                                <Button variant="contained" onClick={() => removeById(item.id)}>
+                                <button onClick={() => removeById(item.id)}>
                                     Quitar
-                                </Button>
+                                </button >
                             </div>
                         );
                     })}
@@ -30,16 +29,16 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                     <h3>Precio final: </h3>
                     {cart.length > 0 ? (
                         <div className="btn-cart">
-                            <Button onClick={limpiar} variant="contained">
+                            <button className="vaciarCarrito" onClick={limpiar}>
                                 Vaciar carrito
-                            </Button>
+                            </button>
                             <Link to="/checkout">
-                                <Button variant="contained">Finalizar compra</Button>
+                                <button className="continuarCompra">Finalizar compra</button>
                             </Link>
                         </div>
                     ) : (
                         <Link to="/">
-                            <Button variant="contained">Agrega productos</Button>
+                                <button>Agrega productos</button>
                         </Link>
                     )}
 
