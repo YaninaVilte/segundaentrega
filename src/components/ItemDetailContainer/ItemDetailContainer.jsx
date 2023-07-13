@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-
+import { PuffLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import Swal from 'sweetalert2'
@@ -52,7 +52,21 @@ const ItemDetailContainer = () => {
                     onAdd={onAdd}
                 />
             ) : (
-                <h1>Cargando...</h1>
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "90vh",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <PuffLoader
+                            color="#146C94"
+                            cssOverride={{}}
+                            size={100}
+                        />
+                    </div>
             )}
         </div>
     );

@@ -1,10 +1,13 @@
 import { Button, TextField } from "@mui/material";
+import "./Checkout.css"
 
 const Checkout = ({ handleSubmit, handleChange, errors }) => {
     return (
-        <div style={{ paddingTop: "50px" }}>
-            <form onSubmit={handleSubmit}>
-                <TextField
+        <div className="checkoutContainer" style={{ paddingTop: "50px" }}>
+            <h1>Datos de contacto</h1>
+
+            <form className="dataCheckout" onSubmit={handleSubmit}>
+                <TextField 
                     label="Name"
                     variant="outlined"
                     name="name"
@@ -28,9 +31,9 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
                     helperText={errors.phone}
                     error={errors.phone ? true : false}
                 />
-                <Button variant="outlined" type="submit">
+                <button type="submit">
                     Comprar
-                </Button>
+                </button>
             </form>
         </div>
     );

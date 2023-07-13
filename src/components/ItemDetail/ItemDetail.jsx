@@ -1,7 +1,6 @@
 import { ItemCount } from "../../components/ItemCount/ItemCount";
 import "./ItemDetail.css";
 
-
 const ItemDetail = ({ productSelected, cantidad, onAdd }) => {
     return (
         <>
@@ -13,16 +12,27 @@ const ItemDetail = ({ productSelected, cantidad, onAdd }) => {
                     <h1>{productSelected.title}</h1>
                     <h3>Presentación: {productSelected.presentation}</h3>
                     <h2>$ {productSelected.price}</h2>
-                    <ItemCount
-                        stock={productSelected.stock}
-                        initial={cantidad}
-                        onAdd={onAdd}
-                        />
+                    {productSelected.stock > 0 ? (
+                        <>
+                            <ItemCount
+                                stock={productSelected.stock}
+                                initial={cantidad}
+                                onAdd={onAdd}
+                            />
+                            {productSelected.stock < 3 && (
+                                <h3>¡Quedan pocas unidades!</h3>
+                            )}
+                        </>
+                    ) : (
+                        <h2>No hay stock</h2>
+                    )}
                 </div>
             </div>
             <div className="datasheetProductSelected">
                 <h2 className="titleDatasheet">FICHA TÉCNICA</h2>
-                <h3 className="description">{productSelected.description.replace(/<br>/g, "\n")}</h3>
+                <h3 className="description">
+                    {productSelected.description.replace(/<br>/g, "\n")}
+                </h3>
                 <h3>Presentación: {productSelected.presentation}</h3>
                 <h3>Graduación de alcohol: {productSelected.alcohol}</h3>
                 <h3>Variedad: {productSelected.variety}</h3>
