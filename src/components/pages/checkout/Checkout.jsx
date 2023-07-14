@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import "./Checkout.css"
 
 const Checkout = ({ handleSubmit, handleChange, errors }) => {
@@ -7,13 +7,21 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
             <h1>Datos de contacto</h1>
 
             <form className="dataCheckout" onSubmit={handleSubmit}>
-                <TextField 
-                    label="Name"
+                <TextField
+                    label="Nombre"
                     variant="outlined"
                     name="name"
                     onChange={handleChange}
                     helperText={errors.name}
                     error={errors.name ? true : false}
+                />
+                <TextField
+                    label="Télefono"
+                    variant="outlined"
+                    name="phone"
+                    onChange={handleChange}
+                    helperText={errors.phone}
+                    error={errors.phone ? true : false}
                 />
                 <TextField
                     label="Email"
@@ -24,12 +32,12 @@ const Checkout = ({ handleSubmit, handleChange, errors }) => {
                     error={errors.email ? true : false}
                 />
                 <TextField
-                    label="Phone"
+                    label="Repetir Email"
                     variant="outlined"
-                    name="phone"
+                    name="repeatEmail"
                     onChange={handleChange}
-                    helperText={errors.phone}
-                    error={errors.phone ? true : false}
+                    helperText={errors.repeatEmail}
+                    error={errors.repeatEmail ? true : false}
                 />
                 <button type="submit">
                     Comprar

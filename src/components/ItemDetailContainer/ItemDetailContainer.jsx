@@ -29,6 +29,8 @@ const ItemDetailContainer = () => {
             icon: 'success',
             title: 'Producto agregado exitosamente',
             showConfirmButton: true,
+            iconColor: "#146C94",
+            confirmButtonColor: '#146C94',
             timer: 1500
         })
     };

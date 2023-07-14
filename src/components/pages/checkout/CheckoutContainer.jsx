@@ -16,8 +16,9 @@ const CheckoutContainer = () => {
     const { handleSubmit, handleChange, errors } = useFormik({
         initialValues: {
             name: "",
-            email: "",
             phone: "",
+            email: "",
+            repeatEmail: "",
         },
 
         onSubmit: (data) => {
@@ -45,21 +46,30 @@ const CheckoutContainer = () => {
         validateOnChange: false,
         validationSchema: Yup.object({
             name: Yup.string()
-                .required("Este campo es obligatorio")
-                .min(3, "Este campo debe contener al menos 3 caracteres"),
+                .required("El campo obligatorio")
+                .min(2, "El campo debe tener al menos dos letras")
+                .matches(/^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s']+$/, 'No debe contener números o símbolos'),
             email: Yup.string()
                 .email("Este campo no corresponde a un email valido")
-                .required("Este campo es obligatorio"),
+                .required("El campo obligatorio"),
             phone: Yup.string()
-                .required("Este campo es obligatorio")
-                .min(10, "El telefono no cumple los requisitos"),
+                .required("El campo obligatorio")
+                .matches(/^[0-9]+$/, 'No debe contener letras o símbolos')
+                .min(10, "Debe tener 10 dígitos"),
+            repeatEmail: Yup.string()
+                .required("El campo obligatorio")
+                .oneOf([Yup.ref("email")], "Los emails deben coincidir"),
         }),
     });
 
     return (
         <div>
             {orderId ? (
-                <h1>Su compra fue exitosa, el numero de comprobante es: {orderId}</h1>
+                <>
+                    <h1>Muchas gracias!</h1>
+                    <h2>Su compra fue generada con éxito.</h2>
+                    <h3>El código de comprobante es: {orderId}</h3>
+                </>
             ) : (
                 <Checkout
                     handleSubmit={handleSubmit}

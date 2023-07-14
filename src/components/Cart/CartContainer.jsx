@@ -14,6 +14,8 @@ const CartContainer = () => {
             showCancelButton: false,
             confirmButtonText: 'Si, limpiar',
             denyButtonText: `No, cancelar`,
+            confirmButtonColor: '#000000',
+            denyButtonColor: '#146C94',
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
