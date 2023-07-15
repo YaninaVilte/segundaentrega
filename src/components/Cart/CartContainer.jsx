@@ -22,7 +22,7 @@ const CartContainer = () => {
             if (result.isConfirmed) {
                 clearCart()
                 swalWithBootstrapButtons.fire('Listo!',
-                    'Tu carrito fue eliminado!',
+                    '¡Tu carrito fue eliminado!',
                     'warning')
             } else if (result.dismiss) {
                 swalWithBootstrapButtons.fire('Tus productos están a salvo',

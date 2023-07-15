@@ -4,7 +4,7 @@
 
 ## :pencil:Instalacion del proyecto 
 
-### Para instalar el proyecto se deberá descargar el mismo en (https://github.com/YaninaVilte/segundaentrega.git). En el editor de código se derá abrir la terminal y a continuación escribir:
+### Para instalar el proyecto se deberá descargar el mismo en https://github.com/YaninaVilte/segundaentrega.git. En el editor de código se derá abrir la terminal y a continuación escribir:
 
 ```
 npm install
@@ -26,7 +26,7 @@ npm run dev
 
 ### También dejo una muestra de como funcina:
 
-
+![Texto alternativo](./src/assets/AnimationGitHub.gif)
 
 ### :woman:Autor
 

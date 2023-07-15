@@ -1,7 +1,7 @@
 import CartContainer from "../Cart/CartContainer.jsx"
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer.jsx"
 import ItemListContainer from "../ItemListContainer/ItemListContainer.jsx"
-import CheckoutContainer from "../../components/pages/checkout/CheckoutContainer.jsx"
+import CheckoutContainer from "../../components/checkout/CheckoutContainer.jsx"
 
 export const menuRoutes = [
     {
