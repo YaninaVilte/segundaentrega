@@ -3,19 +3,19 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { PuffLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
-import Swal from 'sweetalert2'
 import { database } from "../../services/firebase/firebaseConfig.js";
-import {collection, getDoc, doc} from "firebase/firestore"
-
+import { collection, getDoc, doc } from "firebase/firestore";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetailContainer = () => {
     const [productSelected, setProductSelect] = useState({});
 
-    const { addToCart, getTotalQuantityById } = useContext(CartContext)
+    const { addToCart, getTotalQuantityById } = useContext(CartContext);
 
-    const { id } = useParams()
+    const { id } = useParams();
 
-    const cantidad = getTotalQuantityById(id)
+    const cantidad = getTotalQuantityById(id);
 
     const onAdd = (cantidad) => {
         let data = {
@@ -24,15 +24,21 @@ const ItemDetailContainer = () => {
         };
 
         addToCart(data);
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Producto agregado exitosamente',
-            showConfirmButton: true,
-            iconColor: "#146C94",
-            confirmButtonColor: '#146C94',
-            timer: 1500
-        })
+        toast.success('Producto agregado al carrito', {
+            position: "bottom-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            style: {
+                background: 'black',
+                color: '#fff',
+                progressColor: "red",
+            },
+        });
     };
 
     useEffect(() => {
@@ -43,9 +49,9 @@ const ItemDetailContainer = () => {
         });
     }, [id]);
 
-
     return (
         <div>
+            <ToastContainer />
             {productSelected.id ? (
                 <ItemDetail
                     cantidad={cantidad}
@@ -54,21 +60,17 @@ const ItemDetailContainer = () => {
                     onAdd={onAdd}
                 />
             ) : (
-                    <div
-                        style={{
-                            width: "100%",
-                            height: "90vh",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                        }}
-                    >
-                        <PuffLoader
-                            color="#146C94"
-                            cssOverride={{}}
-                            size={100}
-                        />
-                    </div>
+                <div
+                    style={{
+                        width: "100%",
+                        height: "90vh",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
+                    <PuffLoader color="#146C94" cssOverride={{}} size={100} />
+                </div>
             )}
         </div>
     );

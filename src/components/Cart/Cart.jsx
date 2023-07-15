@@ -40,7 +40,7 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                         );
                     })}
                 </div>
-                
+
                 <div className="cart-info">
                     <h2>Descripcion del carrito:</h2>
                     <h3>Cantidad de productos: {quantityProducts}</h3>
@@ -60,7 +60,6 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
                         <Link to="/">
                                 <button>Agrega productos</button>
                         </Link>
-
                     )}
                         </div>
                     </div>
@@ -69,4 +68,5 @@ const Cart = ({ cart, limpiar, removeById, total }) => {
         </div>
     );
 };
+
 export default Cart;

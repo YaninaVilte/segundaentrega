@@ -4,15 +4,6 @@ import { useParams } from "react-router";
 import { PuffLoader} from "react-spinners";
 import { database } from "../../services/firebase/firebaseConfig.js";
 import {collection, getDocs, query, where } from "firebase/firestore";
-import AgregarDocs from "../../AgregarDocs";
-
-
-const objetoLoader = {
-    display: "block",
-    margin: "0 auto",
-    border: "2px solid red",
-};
-
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
@@ -24,10 +15,8 @@ const ItemListContainer = () => {
         let consulta;
 
         if (categoryName) {
-            // los filtrados
             consulta = query(itemCollection, where("category", "==", categoryName))
         } else {
-            // todos
             consulta = itemCollection
         }
 

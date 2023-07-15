@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext"
-import Swal from "sweetalert2";
+import swalWithBootstrapButtons from "sweetalert2";
 import Cart from "./Cart";
 
 const CartContainer = () => {
@@ -8,26 +8,29 @@ const CartContainer = () => {
     let total = getTotalPrice()
     const limpiar = () => {
 
-        Swal.fire({
-            title: 'Seguro quieres limpiar el carrito?',
-            showDenyButton: true,
-            showCancelButton: false,
-            confirmButtonText: 'Si, limpiar',
-            denyButtonText: `No, cancelar`,
+        swalWithBootstrapButtons.fire({
+            title: '¿Estás seguro?',
+            text: "¡Tus productos se van a borrar del carrito!",
+            icon: 'question',
+            showCancelButton: true,
+            reverseButtons: true,
+            confirmButtonText: 'Si, quiero borrarlos!',
+            cancelButtonText: 'No, quiero continuar!',
             confirmButtonColor: '#000000',
-            denyButtonColor: '#146C94',
+            cancelButtonColor: '#146C94',
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 clearCart()
-                Swal.fire('Carrito limpio', '', 'success')
-            } else if (result.isDenied) {
-                Swal.fire('El carrito queda como estaba', '', 'info')
+                swalWithBootstrapButtons.fire('Listo!',
+                    'Tu carrito fue eliminado!',
+                    'warning')
+            } else if (result.dismiss) {
+                swalWithBootstrapButtons.fire('Tus productos están a salvo',
+                    'Podés continuar con la compra',
+                    'success')
             }
         })
-
     }
-
 
     return (
         <div>

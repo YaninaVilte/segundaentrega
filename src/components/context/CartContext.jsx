@@ -6,7 +6,6 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
 
     const addToCart = (newProduct) => {
-        // preguntar si existe
         let exist = isInCart(newProduct.id);
 
         if (exist) {
@@ -25,12 +24,10 @@ const CartContextProvider = ({ children }) => {
         } else {
             setCart([...cart, newProduct]);
             localStorage.setItem("cart", JSON.stringify([...cart, newProduct]))
-
         }
     };
 
     const isInCart = (id) => {
-        // 2
         let exist = cart.some((prod) => prod.id === id);
         return exist;
     };
@@ -40,19 +37,18 @@ const CartContextProvider = ({ children }) => {
         localStorage.removeItem("cart")
     }
 
-
     const removeById = (id) => {
         let newArray = cart.filter((product) => product.id !== id)
         setCart(newArray)
         localStorage.setItem("cart", JSON.stringify(newArray))
     }
+
     const getTotalQuantityById = (id) => {
         let producto = cart.find(prod => prod.id === id)
         return producto?.quantity
     }
 
     const getTotalItems = () => {
-
         let total = cart.reduce((acc, elemento) => {
             return acc + elemento.quantity
         }, 0)
@@ -60,13 +56,11 @@ const CartContextProvider = ({ children }) => {
     }
 
     const getTotalPrice = () => {
-
         let total = cart.reduce((acc, elemento) => {
             return acc + (elemento.quantity * elemento.price)
         }, 0)
         return total
     }
-
 
     let data = {
         cart,
