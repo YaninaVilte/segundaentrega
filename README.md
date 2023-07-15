@@ -18,16 +18,18 @@ npm install
 ```
 npm run dev
 ```
-### Luego simplemente se deberá hacer click en el localhost asignado
+### Luego simplemente se deberá hacer click en el localhost asignado.
 
 ## :boom:Deploy
 
 ### Podes ver el deploy de este proyecto visitando la página:
 
-### También dejo una muestra de como funcina:
+### También dejo una muestra de como funciona:
 
 ![Texto alternativo](./src/assets/AnimationGitHub.gif)
 
 ### :woman:Autor
-
 #### Yanina G. Vilte
+
+### Contacto: yani.vilte@gmail.com
+#### *Podes solicitar las Variables de entorno al mail*
