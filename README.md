@@ -2,6 +2,7 @@
 
 ### Este es el proyecto de un Ecommerce correspondiente tienda de bebidas denominada **.16**, el mismo fue desarrollado durante el curso de REACT en Coderhouse. El profesor fue Jorge Duje y el tutor fue Felipe.
 
+
 ## :pencil:Instalacion del proyecto 
 
 ### Para instalar el proyecto se deberá descargar el mismo en https://github.com/YaninaVilte/segundaentrega.git. En el editor de código se derá abrir la terminal y a continuación escribir:
@@ -9,7 +10,8 @@
 ```
 npm install
 ```
-### Esto es par instalar las dependencias utilizadas en este proyecto.
+### Esto es para instalar las dependencias utilizadas en este proyecto.
+
 
 ## :open_file_folder:Ejecución del proyecto 
 
@@ -19,6 +21,7 @@ npm install
 npm run dev
 ```
 ### Luego simplemente se deberá hacer click en el localhost asignado.
+
 
 ## :boom:Deploy
 
